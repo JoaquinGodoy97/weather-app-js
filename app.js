@@ -2,18 +2,11 @@ window.addEventListener('load', () => {
     let long;
     let lat;
 
-    let temperatureDescription = document.querySelector(
-        '.temperature-description'
-    );
-    let temperatureDegree = document.querySelector(
-        '.temperature-degree'
-    );
-    let locationTimezone = document.querySelector(
-        '.location-timezone'
-    );
-    let weatherIcon = document.querySelector(
-        '.wheaterIcon'
-    );
+    let temperatureDescription = document.querySelector('.temperature-description');
+    let temperatureDegree = document.querySelector('.temperature-degree');
+    let locationTimezone = document.querySelector('.location-timezone');
+    // let weatherIcon = document.querySelector('.weatherIcon');
+
     
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position => {
@@ -36,9 +29,10 @@ window.addEventListener('load', () => {
                 temperatureDegree.textContent = feelslike_c;
                 locationTimezone.textContent = country;
                 // locationTimezone = 
-                weatherIcon.textCotent = icon;
+                // weatherIcon = URL.createObjectURL(icon);
+                document.getElementById('myImage').src = icon;
                 
-
+                
 
             });
 
